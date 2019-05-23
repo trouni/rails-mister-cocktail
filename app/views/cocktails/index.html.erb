@@ -1,0 +1,5 @@
+<h1>Cocktails</h1>
+
+<% @cocktails.each do |cocktail| %>
+  <%= render partial: "card", locals: { cocktail: cocktail } %>
+<% end %>
