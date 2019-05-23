@@ -5,7 +5,10 @@
       <h1 class="mt-3">World's best hipster cocktail recipes.</h1>
       <p>Because alcohol tastes better than tears.</p>
 
-      <a class="btn btn-primary" href="#cocktails"><i class="fas fa-glass-cheers"></i> Browse cocktails</a>
+      <%= simple_form_for :search, wrapper: :inline_form, html: { id: 'search-form', class: 'form-inline' }, url: search_cocktails_path, method: :get do |f| %>
+          <%= f.input :keyword, label: false, placeholder: "Old Fashioned" %>
+          <%= f.button :submit, "Search", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -10,12 +10,12 @@
   <div class="row p-3 justify-content-center">
     <div class="col-12 col-sm-8">
       <h3>Ingredients</h3>
-      <button id="button-add-ingredient" type="button" class="btn btn-primary" data-toggle="modal" data-target="#newIngredient">
-        <i class="far fa-plus-square"> Add an ingredient</i>
-      </button>
+      <a id="button-add-ingredient" class="btn btn-primary" data-toggle="modal" data-target="#editIngredients">
+        <i class="far fa-edit"> Edit cocktail</i>
+      </a>
       <ul>
         <% @cocktail.doses.each do |dose| %>
-          <li><%= dose.ingredient.name %> - <%= dose.description %></li>
+          <li><%= dose.description %> of <%= dose.ingredient.name %></li>
         <% end %>
       </ul>
     </div>
@@ -23,18 +23,20 @@
 </div>
 
 <!-- New Ingredient Modal -->
-<div class="modal fade" id="newIngredient" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="editIngredients" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Add an ingredient to <%= @cocktail.name %></h5>
+        <h5 class="modal-title">Edit recipe for <%= @cocktail.name %></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+        <%= render "doses/list_edit" %>
         <%= render "doses/form" %>
       </div>
     </div>
   </div>
 </div>
+<%= "<script>$('#editIngredients').modal('show');</script>".html_safe if @show_edit_modal %>

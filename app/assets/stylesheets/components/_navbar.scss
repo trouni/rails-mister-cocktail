@@ -16,12 +16,9 @@
 }
 
 .navbar-hipsterblend-visible {
-  background-color: rgba(0,0,0,0.8);
+  background-color: $darkblue;
+  transition: 0.3s background-color ease, 0.5s opacity;
   .navbar-brand {
     opacity: 1;
   }
-}
-
-.modal-backdrop {
-  opacity:0.5 !important;
 }
