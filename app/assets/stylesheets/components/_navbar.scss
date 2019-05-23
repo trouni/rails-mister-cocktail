@@ -1,12 +1,24 @@
-.navbar-lewagon {
+.navbar-blendadvisor {
   justify-content: space-between;
-  background: white;
+  background-color: transparent;
+  color: white;
+  transition: 0.5s background-color ease;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-blendadvisor .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-blendadvisor-bgblue {
+  background-color: $darkblue;;
 }
+
+.navbar-blendadvisor .navbar-brand {
+  font-family: $headers-font;
+  line-height: 2em;
+  i {
+    font-size: 1.3em;
+  }
+}
+
+

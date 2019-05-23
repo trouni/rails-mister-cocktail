@@ -1,5 +1,18 @@
-<h1>Cocktails</h1>
+<div id="main-banner" class="banner"">
+  <div class="container d-flex justify-content-center flex-column h-100">
+    <div>
+      <h1>Find the world's <strong>best cocktail</strong> recipes</h1>
+      <p>Because alcohol tastes better than tears.</p>
+      <a class="btn btn-primary" href="#"><i class="fas fa-glass-cheers"></i> Browse our cocktails!</a>
+    </div>
+  </div>
+</div>
 
-<% @cocktails.each do |cocktail| %>
-  <%= render partial: "card", locals: { cocktail: cocktail } %>
-<% end %>
+
+<div class="container">
+  <h1>Cocktails</h1>
+
+  <% @cocktails.each do |cocktail| %>
+    <%= render partial: "card", locals: { cocktail: cocktail } %>
+  <% end %>
+</div>
