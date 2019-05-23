@@ -1,3 +1,4 @@
 <div class="card-cocktail">
-  <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+  <span><%= link_to cocktail.name, cocktail_path(cocktail) %></span>
+  <div class="card-cocktail-bg" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/collection/2284026/800x600?<%= rand(1000000) %>)"></div>
 </div>
