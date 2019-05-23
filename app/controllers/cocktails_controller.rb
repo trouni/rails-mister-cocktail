@@ -15,11 +15,13 @@ class CocktailsController < ApplicationController
   end
 
   def create
+    @cocktails = Cocktail.all
+    @top_cocktails = @cocktails
     @new_cocktail = Cocktail.new(cocktail_params)
     if @new_cocktail.save
       redirect_to cocktail_path(@new_cocktail)
     else
-      redirect_to cocktails_path
+      # render :index
     end
   end
 
