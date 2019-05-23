@@ -2,3 +2,8 @@
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url("main-banner-cocktails.jpg");
   height: 100vh;
 }
+
+.grid-cocktails {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

@@ -1,9 +1,10 @@
 class CocktailsController < ApplicationController
   before_action :set_cocktail, only: :show
+  before_action :set_new_cocktail
 
   def index
-    @cocktail = Cocktail.new
     @cocktails = Cocktail.all
+    @top_cocktails = @cocktails
   end
 
   def show
@@ -11,13 +12,12 @@ class CocktailsController < ApplicationController
   end
 
   def new
-    @cocktail = Cocktail.new
   end
 
   def create
-    @cocktail = Cocktail.new(cocktail_params)
-    if @cocktail.save
-      redirect_to cocktail_path(@cocktail)
+    @new_cocktail = Cocktail.new(cocktail_params)
+    if @new_cocktail.save
+      redirect_to cocktail_path(@new_cocktail)
     else
       redirect_to cocktails_path
     end
@@ -31,5 +31,9 @@ class CocktailsController < ApplicationController
 
   def set_cocktail
     @cocktail = Cocktail.find(params[:id])
+  end
+
+  def set_new_cocktail
+    @new_cocktail = Cocktail.new
   end
 end

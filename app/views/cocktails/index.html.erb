@@ -1,18 +1,26 @@
 <div id="main-banner" class="banner"">
   <div class="container d-flex justify-content-center flex-column h-100">
     <div>
-      <h1>Find the world's <strong>best cocktail</strong> recipes</h1>
+      <h1>The world's <strong>best cocktail</strong> recipes</h1>
       <p>Because alcohol tastes better than tears.</p>
-      <a class="btn btn-primary" href="#"><i class="fas fa-glass-cheers"></i> Browse our cocktails!</a>
+      <a class="btn btn-primary" href="#cocktails"><i class="fas fa-glass-cheers"></i> Browse cocktails</a>
     </div>
   </div>
 </div>
 
 
-<div class="container">
-  <h1>Cocktails</h1>
+<div id="cocktails" class="container mt-5">
+  <h2>Top cocktails</h2>
+  <div class="grid-cocktails mb-5">
+    <% @top_cocktails.take(4).each do |cocktail| %>
+      <%= render partial: "card", locals: { cocktail: cocktail } %>
+    <% end %>
+  </div>
 
-  <% @cocktails.each do |cocktail| %>
-    <%= render partial: "card", locals: { cocktail: cocktail } %>
-  <% end %>
+  <h2>All our cocktails</h2>
+  <div class="grid-cocktails mb-5">
+    <% @cocktails.each do |cocktail| %>
+      <%= render partial: "card", locals: { cocktail: cocktail } %>
+    <% end %>
+  </div>
 </div>
