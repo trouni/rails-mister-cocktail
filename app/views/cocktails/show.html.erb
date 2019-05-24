@@ -10,10 +10,10 @@
   <div class="row p-3 justify-content-center">
     <div class="col-12 col-sm-8">
       <h3>Ingredients</h3>
-      <a id="button-add-ingredient" class="btn btn-primary" data-toggle="modal" data-target="#editIngredients">
-        <i class="far fa-edit"> Edit cocktail</i>
+      <a id="button-add-ingredient" class="btn btn-primary text-white" data-toggle="modal" data-target="#editIngredients">
+        <i class="far fa-edit"></i> Edit cocktail
       </a>
-      <ul>
+      <ul class="list-ingredients">
         <% @cocktail.doses.each do |dose| %>
           <li><%= dose.description %> of <%= dose.ingredient.name %></li>
         <% end %>

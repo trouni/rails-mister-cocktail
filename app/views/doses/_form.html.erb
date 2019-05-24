@@ -1,6 +1,6 @@
 <h5>Add an ingredient</h5>
 <%= simple_form_for [@cocktail, @dose], wrapper: :horizontal_form do |f| %>
   <%= f.association :ingredient, input_html:  { class: "select2", style: "width: 100%;" } %>
-  <%= f.input :description, placeholder: "e.g. 20 mL, 3 parts, etc." %>
+  <%= f.input :description, placeholder: "e.g. 20 mL, 3 parts" %>
   <%= f.submit "Add this ingredient", class: "nav-link btn btn-primary" %>
 <% end %>

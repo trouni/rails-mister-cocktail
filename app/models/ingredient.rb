@@ -5,7 +5,7 @@ class Ingredient < ApplicationRecord
 
   def self.search(search)
     if search
-      where('name LIKE ?', "%#{search}%")
+      where('LOWER(name) LIKE ?', "%#{search.downcase}%")
     else
       []
     end

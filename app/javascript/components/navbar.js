@@ -1,11 +1,11 @@
 const initUpdateNavbarOnScroll = () => {
-  const navbar = document.querySelector('.navbar-hipsterblend');
+  const navbar = document.querySelector('.navbar-hipsterblends');
   if (navbar) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= window.innerHeight) {
-        navbar.classList.add('navbar-hipsterblend-visible');
+        navbar.classList.add('navbar-hipsterblends-visible');
       } else {
-        navbar.classList.remove('navbar-hipsterblend-visible');
+        navbar.classList.remove('navbar-hipsterblends-visible');
       }
     });
   }

@@ -1,24 +1,24 @@
-.navbar-hipsterblend {
+.navbar-hipsterblends {
   justify-content: space-between;
   background-color: transparent;
   color: white;
   transition: 0.3s background-color ease, 0.5s opacity;
 }
 
-.navbar-hipsterblend .navbar-collapse {
+.navbar-hipsterblends .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-hipsterblend .navbar-brand {
+.navbar-hipsterblends .navbar-brand {
   line-height: 2em;
   font-size: 0.8em;
-  opacity: 0;
+  // opacity: 0;
 }
 
-.navbar-hipsterblend-visible {
+.navbar-hipsterblends-visible {
   background-color: $darkblue;
   transition: 0.3s background-color ease, 0.5s opacity;
-  .navbar-brand {
-    opacity: 1;
-  }
+  // .navbar-brand {
+  //   opacity: 1;
+  // }
 }

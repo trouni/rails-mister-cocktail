@@ -25,11 +25,6 @@ class CocktailsController < ApplicationController
     end
   end
 
-  def search
-    @keyword = params[:search][:keyword]
-    @cocktails = Cocktail.search(@keyword)
-  end
-
   private
 
   def cocktail_params
