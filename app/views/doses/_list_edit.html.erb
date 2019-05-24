@@ -1,9 +1,13 @@
 <h3>Ingredients</h3>
-<ul class="list-ingredients">
-  <% @cocktail.doses.each do |dose| %>
-    <li class="d-flex justify-content-between mx-auto w-75"><span><%= dose.description %> of <%= dose.ingredient.name %></span> <a data-toggle="modal" data-target="#deleteIngredient<%= dose.id %>"><i class="far fa-trash-alt"></i></a></li>
-  <% end %>
-</ul>
+<% if @cocktail.doses.size > 0 %>
+  <ul class="list-ingredients">
+    <% @cocktail.doses.each do |dose| %>
+      <li class="d-flex justify-content-between mx-auto w-75"><span><%= dose.description %> of <%= dose.ingredient.name %></span> <a data-toggle="modal" data-target="#deleteIngredient<%= dose.id %>"><i class="far fa-trash-alt"></i></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No ingredients in this cocktail recipe yet...</p>
+<% end %>
 
 <% @cocktail.doses.each do |dose| %>
   <!-- Delete Ingredient Modal -->

@@ -8,3 +8,35 @@
   list-style-type: none;
   margin: 20px;
 }
+
+.banner {
+  #button-edit-photo {
+    position: absolute;
+    bottom: 1em;
+    right: 2em;
+    transition: 0.3s;
+    display: none;
+    color: white;
+  }
+
+  #button-edit-photo:hover{
+    color: $darkblue;
+  }
+
+  &:hover #button-edit-photo {
+    display: inherit;
+  }
+}
+
+
+#button-add-ingredient {
+  visibility: hidden;
+}
+
+#container-ingredients {
+  min-height: 500px;
+}
+
+#container-ingredients:hover #button-add-ingredient {
+  visibility: visible;
+}

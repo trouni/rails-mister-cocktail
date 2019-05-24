@@ -16,14 +16,14 @@
 
 <div id="cocktails" class="container mt-5">
   <h2>Top cocktails</h2>
-  <div class="grid-cocktails mb-5">
+  <div class="grid-cards mb-5">
     <% @top_cocktails.take(4).each do |cocktail| %>
       <%= render partial: "cocktails/card", locals: { cocktail: cocktail } %>
     <% end %>
   </div>
 
   <h2>All our cocktails</h2>
-  <div class="grid-cocktails mb-5">
+  <div class="grid-cards mb-5">
     <% @cocktails.each do |cocktail| %>
       <%= render partial: "cocktails/card", locals: { cocktail: cocktail } %>
     <% end %>

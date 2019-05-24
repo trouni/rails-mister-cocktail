@@ -1,0 +1,4 @@
+<div class="card-cocktail">
+  <span><%= link_to ingredient.name, ingredient_path(ingredient) %></span>
+  <div class="card-cocktail-bg" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= ingredient.generate_photo_url %>)"></div>
+</div>

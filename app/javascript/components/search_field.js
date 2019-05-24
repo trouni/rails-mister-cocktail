@@ -6,7 +6,6 @@ const animateSearchField = () => {
     typeSpeed: 40,
     backSpeed: 20,
     startDelay: 100,
-    bindInputFocusEvents: true,
     attr: 'placeholder',
     loop: true
   });

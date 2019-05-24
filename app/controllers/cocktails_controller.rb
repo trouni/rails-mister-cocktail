@@ -1,6 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: :show
-  before_action :set_new_cocktail
+  before_action :set_cocktail, only: [:show, :update]
 
   def index
     @cocktails = Cocktail.all
@@ -12,16 +11,32 @@ class CocktailsController < ApplicationController
   end
 
   def new
+    @cocktail = Cocktail.new
+    @cocktail.remote_photo_url = Cocktail.generate_photo_url
   end
 
   def create
-    @cocktails = Cocktail.all
-    @top_cocktails = @cocktails
-    @new_cocktail = Cocktail.new(cocktail_params)
-    if @new_cocktail.save
-      redirect_to cocktail_path(@new_cocktail)
+    @cocktail = Cocktail.new(cocktail_params)
+    @cocktail.remote_photo_url = params[:cocktail][:default_photo_url]
+    if @cocktail.save
+      redirect_to cocktail_path(@cocktail)
     else
-      # render :index
+      render :new
+    end
+  end
+
+  def update
+    @cocktail.update(cocktail_params)
+    redirect_to cocktail_path(@cocktail)
+  end
+
+  def autogenerate
+    @cocktail = Cocktail.new(name: Cocktail.generate_name)
+    @cocktail.remote_photo_url = Cocktail.generate_photo_url
+    if @cocktail.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :new
     end
   end
 
@@ -33,9 +48,5 @@ class CocktailsController < ApplicationController
 
   def set_cocktail
     @cocktail = Cocktail.find(params[:id])
-  end
-
-  def set_new_cocktail
-    @new_cocktail = Cocktail.new
   end
 end

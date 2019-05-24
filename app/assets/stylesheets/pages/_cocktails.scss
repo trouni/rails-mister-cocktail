@@ -3,20 +3,20 @@
   height: 100vh;
 }
 
-.grid-cocktails {
+.grid-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 4px;
 }
 
 @media (max-width:1199px) {
-  .grid-cocktails {
+  .grid-cards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width:991px) {
-  .grid-cocktails {
+  .grid-cards {
     grid-template-columns: 1fr;
   }
 }

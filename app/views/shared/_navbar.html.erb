@@ -11,34 +11,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Browse", cocktails_path, class: "btn btn-outline-primary mr-3" %>
+        <%= link_to "Browse", cocktails_path, class: "btn btn-outline-light mr-3" %>
       </li>
       <li class="nav-item">
-        <button type="button" class="btn btn-primary mr-3" data-toggle="modal" data-target="#newCocktail">
-          Add Cocktail
-        </button>
+        <%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-primary mr-3" %>
       </li>
     </ul>
-  </div>
-</div>
-
-
-<!-- Button trigger modal -->
-
-
-<!-- New Cocktail Modal -->
-<div class="modal fade" id="newCocktail" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Create a new cocktail</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= render "cocktails/form" %>
-      </div>
-    </div>
   </div>
 </div>

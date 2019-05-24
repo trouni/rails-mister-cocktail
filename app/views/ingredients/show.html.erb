@@ -1,9 +1,9 @@
-<div class="banner mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= 'https://source.unsplash.com/1600x900/?cocktail' %>');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= 'https://source.unsplash.com/1600x900/?cocktail' %>');">
   <div class="container d-flex justify-content-center flex-column h-100">
     <div>
       <h1>Search results for <%= @keyword %></h1>
       <%= simple_form_for :search, wrapper: :inline_form, html: { id: 'new-search-form', class: 'form-inline' }, url: search_path, method: :get do |f| %>
-          <%= f.input :keyword, label: false, style: "width: 50%", input_html: { value: @keyword } %>
+          <%= f.input :keyword, label: false, style: "width: 50%", input_html: { value: @keyword, placeholder: @keyword } %>
           <%= f.button :submit, "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
@@ -13,14 +13,14 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h2 class="mb-3">Cocktails</h2>
+      <h2>Cocktails</h2>
       <div class="grid-cards mb-5">
         <% @cocktails.each do |cocktail| %>
           <%= render partial: "cocktails/card", locals: { cocktail: cocktail } %>
         <% end %>
       </div>
 
-      <h2 class="mb-3">Ingredients</h2>
+      <h2>Ingredients</h2>
       <div class="grid-cards mb-5">
         <% @ingredients.each do |ingredient| %>
           <%= render partial: "ingredients/card", locals: { ingredient: ingredient } %>

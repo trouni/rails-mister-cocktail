@@ -10,4 +10,8 @@ class Ingredient < ApplicationRecord
       []
     end
   end
+
+  def generate_photo_url
+    "https://source.unsplash.com/1600x1200?#{name.split(' ').join(',')}"
+  end
 end

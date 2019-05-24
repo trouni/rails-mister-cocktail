@@ -1,0 +1,57 @@
+<div class="banner<%= ' vh-100' unless @cocktail.name && @cocktail.name != "" %>" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.id ? @cocktail.photo : @cocktail.remote_photo_url %>');">
+  <div class="container d-flex justify-content-center flex-column h-100">
+    <div>
+      <% if @cocktail.name && @cocktail.name != "" %>
+        <h1><%= @cocktail.name %></h1>
+      <% else %>
+        <%= simple_form_for @cocktail do |f| %>
+          <div class="input-group justify-content-between">
+            <%= f.input :name, label: false, input_html: { class: "form-control m-0" } %>
+            <div class="input-group-append">
+              <%= f.button :submit, "Create", id: "create-cocktail-submit", class: "btn-primary hidden" %>
+            </div>
+          </div>
+          <%= f.input :default_photo_url, as: :hidden, input_html: { value: @cocktail.remote_photo_url } %>
+          <div class="row">
+            <p class="text-center mt-3 w-100">OR</p>
+            <%= link_to "Auto-generate name", autogenerate_cocktails_path, method: :post, id:"btn-autogenerate-name", class: "btn btn-outline-light mt-3 mx-auto" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row p-3 justify-content-center">
+    <div class="col-12 col-sm-8">
+      <h3>Ingredients</h3>
+      <a id="button-add-ingredient" class="btn btn-primary text-white" data-toggle="modal" data-target="#editIngredients">
+        <i class="far fa-edit"></i> Edit cocktail
+      </a>
+      <ul class="list-ingredients">
+        <%# @cocktail.doses.each do |dose| %>
+          <li><%#= dose.description %> of <%#= dose.ingredient.name %></li>
+        <%# end %>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<!-- New Ingredient Modal -->
+<!-- <div class="modal fade" id="editIngredients" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit recipe for <%= @cocktail.name %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%#= render "doses/list_edit" %>
+        <%#= render "doses/form" %>
+      </div>
+    </div>
+  </div>
+</div> -->

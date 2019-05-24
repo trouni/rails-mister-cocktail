@@ -1,0 +1,52 @@
+form#new_cocktail {
+  #cocktail_name {
+    font-family: $headers-font;
+    background-color: transparent;
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 3em;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    transition: 0.3s box-shadow;
+  }
+
+  #cocktail_name::placeholder {
+    color: white;
+    opacity: 0.7;
+  }
+
+  #cocktail_name::focus, #cocktail_name::active, {
+    background-color: transparent;
+  }
+
+  .form-group {
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .input-group.focus {
+    box-shadow: 0 0 0 0.2rem rgba(92, 158, 173, 0.25);
+  }
+
+  .input-group .btn {
+    padding: 0 1.5em;
+    letter-spacing: 2px;
+    font-size: 32px;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: 0.5s opacity;
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  #btn-autogenerate-name {
+    font-size: 2em;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+  }
+}
