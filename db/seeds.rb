@@ -3,8 +3,8 @@ require 'json'
 require 'faker'
 
 puts "Deleting records from database..."
-Cocktail.destroy_all if Rails.env.development?
-Ingredient.destroy_all if Rails.env.development?
+Cocktail.destroy_all # if Rails.env.development?
+Ingredient.destroy_all # if Rails.env.development?
 
 puts ""
 puts "Fetching ingredients from API"
