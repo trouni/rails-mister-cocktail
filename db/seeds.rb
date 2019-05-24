@@ -17,9 +17,11 @@ json["drinks"].each do |drink|
 end
 
 puts ""
-puts "Creating cocktail names..."
+puts "Creating cocktails..."
 50.times do
-  Cocktail.create(name: Cocktail.generate_name)
+  cocktail = Cocktail.new(name: Cocktail.generate_name)
+  cocktail.remote_photo_url = "https://source.unsplash.com/collection/2284026/1600x1200"
+  cocktail.save
   print "#"
 end
 
