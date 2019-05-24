@@ -2,10 +2,10 @@
   <div class="container d-flex justify-content-center flex-column h-100">
     <div>
       <!-- <span class="logo">HipsterBlends <i class="fas fa-cocktail"></i></span> -->
-      <h1 class="mt-3">The world's best hipster cocktail recipes.</h1>
-      <p>Because alcohol tastes better than tears.</p>
+      <h1 class="my-3">The world's best hipster cocktail recipes.</h1>
+      <p class="my-3">Because alcohol tastes better than tears.</p>
 
-      <%= simple_form_for :home_search, wrapper: :inline_form, html: { id: 'search-form', class: 'form-inline' }, url: search_path, method: :get do |f| %>
+      <%= simple_form_for :home_search, wrapper: :inline_form, html: { id: 'search-form', class: 'form-inline my-5' }, url: search_path, method: :get do |f| %>
           <%= f.input :keyword, label: false, style: 'width: 500px' %>
           <%= f.button :submit, "Find the perfect drink", class: "btn btn-primary" %>
       <% end %>
@@ -29,3 +29,5 @@
     <% end %>
   </div>
 </div>
+
+<%= javascript_pack_tag 'home' %>

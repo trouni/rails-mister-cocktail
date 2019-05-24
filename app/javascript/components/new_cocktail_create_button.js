@@ -1,5 +1,4 @@
 const newCocktailCreateButtonBehaviour = () => {
-  console.log("button startes")
   const button = document.getElementById("create-cocktail-submit");
   const input = document.getElementById("cocktail_name");
   input.addEventListener("focus", (event) => {

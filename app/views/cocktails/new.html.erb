@@ -22,36 +22,4 @@
   </div>
 </div>
 
-<!-- <div class="container">
-  <div class="row p-3 justify-content-center">
-    <div class="col-12 col-sm-8">
-      <h3>Ingredients</h3>
-      <a id="button-add-ingredient" class="btn btn-primary text-white" data-toggle="modal" data-target="#editIngredients">
-        <i class="far fa-edit"></i> Edit cocktail
-      </a>
-      <ul class="list-ingredients">
-        <%# @cocktail.doses.each do |dose| %>
-          <li><%#= dose.description %> of <%#= dose.ingredient.name %></li>
-        <%# end %>
-      </ul>
-    </div>
-  </div>
-</div> -->
-
-<!-- New Ingredient Modal -->
-<!-- <div class="modal fade" id="editIngredients" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Edit recipe for <%= @cocktail.name %></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%#= render "doses/list_edit" %>
-        <%#= render "doses/form" %>
-      </div>
-    </div>
-  </div>
-</div> -->
+<%= javascript_pack_tag 'new_cocktail' %>
