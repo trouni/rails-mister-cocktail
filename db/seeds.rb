@@ -19,7 +19,7 @@ end
 puts ""
 puts "Creating cocktail names..."
 50.times do
-  Cocktail.create(name: Faker::Hipster.words(2).map { |el| el.capitalize if el[0] === el[0].downcase }.join(" "))
+  Cocktail.create(name: Cocktail.generate_name)
   print "#"
 end
 
