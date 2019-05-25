@@ -31,7 +31,8 @@ puts "Adding ingredients to cocktails..."
 
 Cocktail.all.each do |cocktail|
   (rand(2..7)).times do
-    Dose.create(cocktail: cocktail, ingredient: Ingredient.all.sample, description: "#{rand(1..8)} parts")
+    parts = rand(1..8)
+    Dose.create(cocktail: cocktail, ingredient: Ingredient.all.sample, description: "#{parts} #{'part'.pluralize(parts)}")
   end
   print "#"
 end

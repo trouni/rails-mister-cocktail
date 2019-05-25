@@ -8,6 +8,7 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
     "select2": "^4.0.7",
+    "stimulus": "^1.1.1",
     "typed.js": "^2.0.10"
   },
   "devDependencies": {
