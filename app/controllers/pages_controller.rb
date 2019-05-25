@@ -3,7 +3,8 @@ class PagesController < ApplicationController
 
   def home
     @cocktails = Cocktail.all
-    @top_cocktails = @cocktails
+    @top_cocktails = Cocktail.best_rated
+    @most_popular = Cocktail.most_popular
   end
 
   def search

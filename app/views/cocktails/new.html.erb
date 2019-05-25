@@ -6,7 +6,7 @@
       <% else %>
         <%= simple_form_for @cocktail do |f| %>
           <div class="input-group justify-content-between" data-controller='new-cocktail'>
-            <%= f.input :name, label: false, input_html: { data: { action: 'focus->new-cocktail#showBtn blur->new-cocktail#hideBtn' } } %>
+            <%= f.input :name, label: false, input_html: { data: { action: 'focus->new-cocktail#showBtn blur->new-cocktail#hideBtn' }, autocomplete: 'off' } %>
             <div class="input-group-append">
               <%= f.button :submit, "Create", id: 'create-cocktail-submit', class: 'btn-primary hidden', data: { target: 'new-cocktail.btnCreate' } %>
             </div>
@@ -21,5 +21,3 @@
     </div>
   </div>
 </div>
-
-<%#= javascript_pack_tag 'new_cocktail' %>

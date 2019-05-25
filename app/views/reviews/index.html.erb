@@ -1,0 +1,26 @@
+<%= render 'cocktails/banner' %>
+
+<div id="container-reviews" class="container">
+  <div class="row pt-5 justify-content-center">
+    <div class="col-12 col-sm-8">
+      <h3>All reviews for <%= link_to @cocktail.name, cocktail_path(@cocktail) %></h3>
+      <% if @cocktail.reviews.size > 0 %>
+        <a id="button-add-ingredient" class="btn btn-outline-secondary" data-toggle="modal" data-target="#editIngredients">
+          <i class="fas fa-star"></i> Leave a review
+        </a>
+        <ul class="list-ingredients list-group">
+          <% @cocktail.reviews.each do |review| %>
+            <li class="list-group-item">
+              <%= ('<i class="fas fa-star"></i>' * review.rating).html_safe %>
+              <p><%= review.description %></p>
+              </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No reviews for this cocktail yet...</p>
+      <% end %>
+      <h5>Leave a review</h5>
+      <%= render 'reviews/form' %>
+    </div>
+  </div>
+</div>

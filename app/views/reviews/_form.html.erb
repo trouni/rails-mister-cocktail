@@ -1,0 +1,8 @@
+<div id="leave-a-review" class="form-leave-review mt-5">
+  <h5>Leave a review</h5>
+  <%= simple_form_for [@cocktail, @review], wrapper: :horizontal_form do |f| %>
+    <%= f.input :rating, input_html: { min: 1, max: 5 }, placeholder: 'Rate this cocktail from 1 to 5' %>
+    <%= f.input :description, placeholder: "What did you like or dislike about this cocktail?" %>
+    <%= f.submit "Submit review", class: "nav-link btn btn-primary" %>
+  <% end %>
+</div>

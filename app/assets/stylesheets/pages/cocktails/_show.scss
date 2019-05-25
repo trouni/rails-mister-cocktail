@@ -1,9 +1,3 @@
-#button-add-ingredient {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
 .list-ingredients {
   list-style-type: none;
   margin: 20px;
@@ -29,14 +23,13 @@
 }
 
 
-#button-add-ingredient {
+.btn-hover-container {
   visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-#container-ingredients {
-  min-height: 500px;
-}
-
-#container-ingredients:hover #button-add-ingredient {
+.container.hoverable:hover .btn-hover-container {
   visibility: visible;
 }

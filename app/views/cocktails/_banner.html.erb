@@ -1,0 +1,12 @@
+<div>
+  <div class="banner position-relative" data-target="navbar.banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.id ? @cocktail.photo : @cocktail.remote_photo_url %>');">
+    <a id="button-edit-photo" class="btn btn-outline-light" data-toggle="modal" data-target="#editPhoto">
+      <i class="far fa-edit"></i> Edit photo
+    </a>
+    <div class="container d-flex justify-content-center flex-column h-100">
+      <div>
+        <h1><%= @cocktail.name %></h1>
+      </div>
+    </div>
+  </div>
+</div>

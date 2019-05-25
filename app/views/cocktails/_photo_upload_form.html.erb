@@ -1,7 +1,11 @@
-<%= cl_image_tag @cocktail.photo, width: "300px", height: "200px", class: "m-3" %>
 
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :photo, label: false %>
+<%= simple_form_for @cocktail, data: { controller: 'photo-upload' } do |f| %>
+  <%= cl_image_tag @cocktail.photo, width: "300px", height: "200px", class: "m-3", data: { target: 'photo-upload.preview' } %>
+  <%= f.input :photo, label: false, input_html: { data: { action: "change->photo-upload#afterUpload", target: 'photo-upload.realInput' } } %>
   <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "Upload", class: "btn btn-primary" %>
+  <!-- <div class="custom-file">
+    <input type="file" class="custom-file-input" id="photo-upload" data-action="click->photo-upload#openBrowse" data-target="photo-upload.fileInput">
+    <label class="custom-file-label" for="photo-upload" data-target="photo-upload.fileName">Choose file</label>
+  </div> -->
+  <%= f.submit "Upload", class: "btn btn-primary mt-3" %>
 <% end %>

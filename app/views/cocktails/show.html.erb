@@ -1,20 +1,11 @@
-<div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.id ? @cocktail.photo : @cocktail.remote_photo_url %>');">
-  <a id="button-edit-photo" class="btn btn-outline-light" data-toggle="modal" data-target="#editPhoto">
-    <i class="far fa-edit"></i> Edit photo
-  </a>
-  <div class="container d-flex justify-content-center flex-column h-100">
-    <div>
-      <h1><%= @cocktail.name %></h1>
-    </div>
-  </div>
-</div>
+<%= render 'banner' %>
 
-<div id="container-ingredients" class="container">
-  <div class="row py-5 justify-content-center">
+<div id="container-ingredients" class="container hoverable">
+  <div class="row pt-5 justify-content-center">
     <div class="col-12 col-sm-8">
       <h3>Ingredients</h3>
       <% if @cocktail.doses.size > 0 %>
-        <a id="button-add-ingredient" class="btn btn-outline-secondary" data-toggle="modal" data-target="#editIngredients">
+        <a href="#" class="btn btn-outline-secondary btn-hover-container" data-toggle="modal" data-target="#editIngredients">
           <i class="far fa-edit"></i> Edit recipe
         </a>
         <ul class="list-ingredients list-group">
@@ -32,28 +23,29 @@
   </div>
 </div>
 
-<div id="container-reviews" class="container">
-  <div class="row py-5 justify-content-center">
+<div id="container-reviews" class="container hoverable">
+  <div class="row pt-5 justify-content-center">
     <div class="col-12 col-sm-8">
       <h3>Reviews</h3>
       <% if @cocktail.reviews.size > 0 %>
-        <a id="button-add-ingredient" class="btn btn-outline-secondary" data-toggle="modal" data-target="#editIngredients">
+        <a href="#leave-a-review" class="btn btn-outline-secondary btn-hover-container">
           <i class="fas fa-star"></i> Leave a review
         </a>
         <ul class="list-ingredients list-group">
-          <% @cocktail.reviews.each do |review| %>
+          <% @cocktail.reviews.take(8).each do |review| %>
             <li class="list-group-item">
               <%= ('<i class="fas fa-star"></i>' * review.rating).html_safe %>
               <p><%= review.description %></p>
               </li>
           <% end %>
         </ul>
+        <% if @cocktail.reviews.count > 8 %>
+          <div class="text-center"><%= link_to "See all reviews for #{@cocktail.name}", cocktail_reviews_path(@cocktail) %></div>
+        <% end %>
       <% else %>
         <p>No reviews for this cocktail yet...</p>
-        <a id="add-first-ingredient" class="btn btn-outline-secondary" data-toggle="modal" data-target="#editIngredients">
-          Tried <%= @cocktail.name %>? Leave a review.
-        </a>
       <% end %>
+      <%= render 'reviews/form' %>
     </div>
   </div>
 </div>

@@ -11,7 +11,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="main-content" data-controller="navbar" data-action="scroll@window->navbar#toggleBackground">
     <%= render "shared/navbar" %>
     <%= yield %>
     <%= render "shared/footer" %>

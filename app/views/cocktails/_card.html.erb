@@ -1,4 +1,10 @@
 <div class="card-cocktail">
   <span><%= link_to cocktail.name, cocktail_path(cocktail) %></span>
+  <div class="card-info px-3 d-flex align-content-center justify-content-end">
+    <p class="m-0"><% if cocktail.rating %>
+      <i class="fas fa-star"></i> <%=cocktail.rating %> <small>(<%=cocktail.reviews.count %>)</small>
+      <% end %>
+    </p>
+    </div>
   <div class="card-cocktail-bg" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(cocktail.photo, width: 800, height: 600, crop: :fill) %>)"></div>
 </div>

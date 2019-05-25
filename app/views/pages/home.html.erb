@@ -1,13 +1,17 @@
 <div id="main-banner" class="banner">
-  <div class="container d-flex justify-content-center flex-column h-100">
+  <div class="container d-flex justify-content-center flex-column h-100" data-target="navbar.banner">
     <div>
       <!-- <span class="logo">HipsterBlends <i class="fas fa-cocktail"></i></span> -->
       <h1 class="my-3">The world's best hipster cocktail recipes.</h1>
       <p class="my-3">Because alcohol tastes better than tears.</p>
 
       <%= simple_form_for :home_search, wrapper: :inline_form, html: { id: 'search-form', class: 'form-inline my-5', data: { controller: 'home' } }, url: search_path, method: :get do |f| %>
-          <%= f.input :keyword, label: false, input_html: { data: { target: 'home.searchInput' } } %>
-          <%= f.button :submit, "Find the perfect drink", class: "btn btn-primary" %>
+          <div class="row w-100">
+            <div class="col-12">
+              <%= f.input :keyword, label: false %>
+            </div>
+          </div>
+          <%= f.button :submit, "Find the perfect drink", class: "btn-primary" %>
       <% end %>
     </div>
   </div>
@@ -15,9 +19,9 @@
 
 
 <div id="cocktails" class="container mt-5">
-  <h2>Top cocktails</h2>
+  <h2>Most popular</h2>
   <div class="grid-cards mb-5">
-    <% @top_cocktails.take(4).each do |cocktail| %>
+    <% @most_popular.take(4).each do |cocktail| %>
       <%= render partial: "cocktails/card", locals: { cocktail: cocktail } %>
     <% end %>
   </div>
