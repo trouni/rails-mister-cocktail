@@ -29,5 +29,8 @@ module RailsMisterCocktail
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # assets compile without app attempting to connect to the database
+    config.assets.initialize_on_precompile = false
   end
 end
