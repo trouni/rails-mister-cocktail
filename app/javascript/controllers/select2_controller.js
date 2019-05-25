@@ -1,7 +1,9 @@
 import { Controller } from "stimulus"
+import $ from 'jquery';
+import 'select2';
 
 export default class extends Controller {
   connect() {
-    console.log("Hello, Stimulus!", this.element)
+    $('.select2').select2();
   }
 }
