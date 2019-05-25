@@ -49,4 +49,28 @@ form#new_cocktail {
     text-transform: uppercase;
     padding: 0.5em 1em;
   }
+
+  .form-group-invalid {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 992px) {
+  form#new_cocktail {
+    #cocktail_name {
+      text-align: center;
+      font-size: 2em;
+    }
+    .input-group-append {
+      width: 100%;
+    }
+    .input-group-append .btn {
+      width: 100%;
+      border-radius: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      transition: 0.5s opacity;
+    }
+  }
 }

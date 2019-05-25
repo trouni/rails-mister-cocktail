@@ -12,6 +12,12 @@
   font-weight: bold;
 }
 
+@media (max-width: 768px) {
+  .banner h1 {
+    text-align: center;
+  }
+}
+
 .banner p {
   font-size: 2em;
   color: white;

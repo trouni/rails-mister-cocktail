@@ -6,11 +6,7 @@
       <p class="my-3">Because alcohol tastes better than tears.</p>
 
       <%= simple_form_for :home_search, wrapper: :inline_form, html: { id: 'search-form', class: 'form-inline my-5', data: { controller: 'home' } }, url: search_path, method: :get do |f| %>
-          <div class="row w-100">
-            <div class="col-12">
-              <%= f.input :keyword, label: false %>
-            </div>
-          </div>
+          <%= f.input :keyword, label: false, wrapper_html: { class: 'flex-grow-1' }, input_html: { class: 'w-100' } %>
           <%= f.button :submit, "Find the perfect drink", class: "btn-primary" %>
       <% end %>
     </div>

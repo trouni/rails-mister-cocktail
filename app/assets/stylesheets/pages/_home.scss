@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+#home_search_keyword, span.home_search_keyword {
+  max-width: 500px;
+}
+
+#home_search_keyword, #search-form input {
+  font-size: 1.3em;
+  height: 3em;
+}
+
+@media (max-width: 490px) {
+  #home_search_keyword, #search-form input {
+    width: 100%;
+  }
+}
