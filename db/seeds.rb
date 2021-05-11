@@ -41,7 +41,7 @@ puts ""
 puts "Creating reviews..."
 
 20.times do
-  cocktail = Cocktail.all.sample
+  cocktail = Cocktail.not_reviewed.sample
   puts ""
   puts "Reviewing #{cocktail.name}"
   number_of_reviews = rand(100)
